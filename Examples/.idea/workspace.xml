@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator_Strings.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator_Strings.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +16,7 @@
   <component name="ProjectId" id="1VGCEjsHdrdBYwkfLnTk5YlcJWB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Panelator" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -112,7 +102,7 @@
       <workItem from="1577366775353" duration="402000" />
       <workItem from="1577367266886" duration="622000" />
       <workItem from="1577368360997" duration="204000" />
-      <workItem from="1577368783681" duration="147000" />
+      <workItem from="1577368783681" duration="4507000" />
     </task>
     <servers />
   </component>
@@ -131,5 +121,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/AEGP/Panelator/Mac/imgui_draw.cpp</url>
+          <line>1656</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

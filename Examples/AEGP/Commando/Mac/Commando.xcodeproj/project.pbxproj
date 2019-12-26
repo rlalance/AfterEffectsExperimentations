@@ -20,12 +20,12 @@
 		7EF3705B16F29D0E002A3CB3 /* Commando.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Commando.h; path = ../Commando.h; sourceTree = "<group>"; };
 		7EF3705C16F29D13002A3CB3 /* Commando_Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Commando_Strings.h; path = ../Commando_Strings.h; sourceTree = "<group>"; };
 		C4E618CC095A3CE80012CA3F /* Commando.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Commando.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		D01B03B10AC9E60B00A234E5 /* AE_GeneralPlug.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AE_GeneralPlug.h; path = ../../../Headers/AE_GeneralPlug.h; sourceTree = SOURCE_ROOT; };
+		D01B03B10AC9E60B00A234E5 /* AE_GeneralPlug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AE_GeneralPlug.h; path = ../../../Headers/AE_GeneralPlug.h; sourceTree = SOURCE_ROOT; };
 		D0FDF9B509941656008E4F6B /* Commando_Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Commando_Strings.cpp; path = ../Commando_Strings.cpp; sourceTree = SOURCE_ROOT; };
 		D0FDF9B709941656008E4F6B /* Commando.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Commando.cpp; path = ../Commando.cpp; sourceTree = SOURCE_ROOT; };
 		D0FDF9B909941656008E4F6B /* Commando_PiPL.r */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.rez; name = Commando_PiPL.r; path = ../Commando_PiPL.r; sourceTree = SOURCE_ROOT; };
 		D0FE579A0993C5E500139A60 /* AEGP_SuiteHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = AEGP_SuiteHandler.cpp; path = ../../../Util/AEGP_SuiteHandler.cpp; sourceTree = SOURCE_ROOT; };
-		D0FE579B0993C5E500139A60 /* AEGP_SuiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AEGP_SuiteHandler.h; path = ../../../Util/AEGP_SuiteHandler.h; sourceTree = SOURCE_ROOT; };
+		D0FE579B0993C5E500139A60 /* AEGP_SuiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGP_SuiteHandler.h; path = ../../../Util/AEGP_SuiteHandler.h; sourceTree = SOURCE_ROOT; };
 		D0FE579C0993C5E500139A60 /* MissingSuiteError.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = MissingSuiteError.cpp; path = ../../../Util/MissingSuiteError.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 

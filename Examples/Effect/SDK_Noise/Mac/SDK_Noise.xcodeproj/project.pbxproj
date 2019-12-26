@@ -26,7 +26,7 @@
 		C4E618CC095A3CE80012CA3F /* SDK_Noise.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SDK_Noise.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		D075387E09940A81000099DF /* SDK_Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = SDK_Noise.cpp; path = ../SDK_Noise.cpp; sourceTree = SOURCE_ROOT; };
 		D075388209940AA7000099DF /* SDK_NoisePiPL.r */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.rez; name = SDK_NoisePiPL.r; path = ../SDK_NoisePiPL.r; sourceTree = SOURCE_ROOT; };
-		D0D30D350A48C36000AC30E7 /* AE_Effect.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AE_Effect.h; path = ../../../Headers/AE_Effect.h; sourceTree = SOURCE_ROOT; };
+		D0D30D350A48C36000AC30E7 /* AE_Effect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AE_Effect.h; path = ../../../Headers/AE_Effect.h; sourceTree = SOURCE_ROOT; };
 		D0D30D360A48C37000AC30E7 /* SDK_Noise.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SDK_Noise.h; path = ../SDK_Noise.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 

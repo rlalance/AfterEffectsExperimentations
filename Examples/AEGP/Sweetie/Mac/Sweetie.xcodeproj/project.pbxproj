@@ -23,7 +23,7 @@
 		D0FDF9B709941656008E4F6B /* Sweetie.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = Sweetie.cpp; path = ../Sweetie.cpp; sourceTree = SOURCE_ROOT; };
 		D0FDF9B909941656008E4F6B /* Sweetie_PiPL.r */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.rez; name = Sweetie_PiPL.r; path = ../Sweetie_PiPL.r; sourceTree = SOURCE_ROOT; };
 		D0FE579A0993C5E500139A60 /* AEGP_SuiteHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = AEGP_SuiteHandler.cpp; path = ../../../Util/AEGP_SuiteHandler.cpp; sourceTree = SOURCE_ROOT; };
-		D0FE579B0993C5E500139A60 /* AEGP_SuiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AEGP_SuiteHandler.h; path = ../../../Util/AEGP_SuiteHandler.h; sourceTree = SOURCE_ROOT; };
+		D0FE579B0993C5E500139A60 /* AEGP_SuiteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AEGP_SuiteHandler.h; path = ../../../Util/AEGP_SuiteHandler.h; sourceTree = SOURCE_ROOT; };
 		D0FE579C0993C5E500139A60 /* MissingSuiteError.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = MissingSuiteError.cpp; path = ../../../Util/MissingSuiteError.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -51,9 +51,7 @@
 				7EF36FF016F29B15002A3CB3 /* Cocoa.framework */,
 				C4E6188C095A3C800012CA3F /* Products */,
 			);
-			comments = "
-
-";
+			comments = "\n\n";
 			sourceTree = "<group>";
 		};
 		C4E6188C095A3C800012CA3F /* Products */ = {

@@ -1,14 +1,17 @@
 #include "Panelator.h"
 
-#include <new>
-
 #include "imgui.h"
 #include "imgui_impl_osx.h"
 #include "imgui_impl_opengl2.h"
-#include <stdio.h>
+#include "IconsFontAwesome5.h"
+
 #import <Cocoa/Cocoa.h>
+#include <new>
 #import <OpenGL/gl.h>
 #import <OpenGL/glu.h>
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
 
 template<>
 const A_char *SuiteTraits<AEGP_PanelSuite1>::i_name = kAEGPPanelSuite;
@@ -152,6 +155,8 @@ public:
         PT_XTE_CATCH_RETURN_ERR;
     }
 
+    // TODO death hook
+
     Panelator(SPBasicSuite *pica_basicP, AEGP_PluginID pluginID) :
         m_pBasicSuite(pica_basicP),
         m_pluginId(pluginID),
@@ -170,10 +175,6 @@ public:
 
     void CommandHook(AEGP_Command command, AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
     {
-//        case PF_Cmd_EVENT:
-//            err = HandleEvent(in_data, out_data, params, output, reinterpret_cast<PF_EventExtra *>(extra));
-//        break;
-
         if (command == m_command)
         {
             PT_ETX(m_suiteHelper->AEGP_ToggleVisibility(i_match_nameZ));
@@ -231,7 +232,17 @@ public:
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
         ImGuiIO &io = ImGui::GetIO();
-        (void) io;
+        io.Fonts->AddFontDefault();
+
+// merge in icons from Font Awesome
+        static const ImWchar icons_ranges[] = {ICON_MIN_FA, ICON_MAX_FA, 0};
+        ImFontConfig icons_config;
+        icons_config.MergeMode = true;
+        icons_config.PixelSnapH = true;
+
+        std::string fontPath = std::string(getcwd(NULL, 0)) + "/Plug-ins/fa-solid-900.ttf";
+
+        io.Fonts->AddFontFromFileTTF(fontPath.c_str(), 16.0f, &icons_config, icons_ranges);
 
         ImGui::StyleColorsLight();
         ImGui_ImplOSX_Init();
@@ -251,12 +262,8 @@ public:
             ImGui_ImplOSX_NewFrame(m_pImguiView);
             ImGui::NewFrame();
 
-            static bool show_demo_window = true;
-
-            if (show_demo_window)
-            {
-                ImGui::ShowDemoWindow(&show_demo_window);
-            }
+            ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
+//            ShowDemoWindow();
 
             ImGui::Render();
             [[m_pImguiView openGLContext] makeCurrentContext];
@@ -276,6 +283,90 @@ public:
         }
 
         return err;
+    }
+
+    void ShowNewWindow(ImVec2 parentWindowSize)
+    {
+        static bool no_titlebar = true;
+        static bool no_scrollbar = false;
+        static bool no_menu = true;
+        static bool no_move = true;
+        static bool no_resize = true;
+        static bool no_collapse = false;
+        static bool no_close = true;
+        static bool no_nav = false;
+        static bool no_background = false;
+        static bool no_bring_to_front = true;
+        static bool open = true;
+
+        ImGuiWindowFlags window_flags = 0;
+        if (no_titlebar)
+            window_flags |= ImGuiWindowFlags_NoTitleBar;
+        if (no_scrollbar)
+            window_flags |= ImGuiWindowFlags_NoScrollbar;
+        if (!no_menu)
+            window_flags |= ImGuiWindowFlags_MenuBar;
+        if (no_move)
+            window_flags |= ImGuiWindowFlags_NoMove;
+        if (no_resize)
+            window_flags |= ImGuiWindowFlags_NoResize;
+        if (no_collapse)
+            window_flags |= ImGuiWindowFlags_NoCollapse;
+        if (no_nav)
+            window_flags |= ImGuiWindowFlags_NoNav;
+        if (no_background)
+            window_flags |= ImGuiWindowFlags_NoBackground;
+        if (no_bring_to_front)
+            window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus;
+
+        ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
+        ImGui::SetNextWindowSize(parentWindowSize, ImGuiCond_Always);
+
+        // Main body of the Demo window starts here.
+        if (!ImGui::Begin("You.i Nexus", &open, window_flags))
+        {
+            // Early out if the window is collapsed, as an optimization.
+            ImGui::End();
+            return;
+        }
+
+        if (ImGui::CollapsingHeader("Design System  " ICON_FA_PENCIL_RULER))
+        {
+            ImGui::Indent(ImGui::GetStyle().FramePadding.x);
+
+            if (ImGui::CollapsingHeader("Instructions  " ICON_FA_BOOK))
+            {
+                ImGui::Text("Instructions");
+            }
+            ImGui::Separator();
+
+            if (ImGui::CollapsingHeader("Colors  " ICON_FA_PALETTE))
+            {
+            }
+            ImGui::Separator();
+
+            if (ImGui::CollapsingHeader("Typography  " ICON_FA_FONT))
+            {
+                ImGui::Text("Typography");
+            }
+            ImGui::Separator();
+            ImGui::Unindent(ImGui::GetStyle().FramePadding.x);
+        }
+
+        if (ImGui::CollapsingHeader("Tools"))
+        {
+        }
+
+        ImGui::End();
+    }
+
+    void ShowDemoWindow() const
+    {
+        static bool show_demo_window = true;
+        if (show_demo_window)
+        {
+            ImGui::ShowDemoWindow(&show_demo_window);
+        }
     }
 };
 

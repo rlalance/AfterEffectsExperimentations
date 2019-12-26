@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="" />
+    <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/picojson.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Panelator-project-headers.hmap" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Panelator-project-headers.hmap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +109,7 @@
       <workItem from="1577367266886" duration="622000" />
       <workItem from="1577368360997" duration="204000" />
       <workItem from="1577368783681" duration="4507000" />
+      <workItem from="1577373465885" duration="2523000" />
     </task>
     <servers />
   </component>

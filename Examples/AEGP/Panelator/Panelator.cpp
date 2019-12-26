@@ -4,6 +4,7 @@
 #include "imgui_impl_osx.h"
 #include "imgui_impl_opengl2.h"
 #include "IconsFontAwesome5.h"
+#include "picojson.h"
 
 #import <Cocoa/Cocoa.h>
 #include <new>
@@ -12,6 +13,10 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+
+
+// https://fontawesome.com/icons?d=gallery&m=free
+
 
 template<>
 const A_char *SuiteTraits<AEGP_PanelSuite1>::i_name = kAEGPPanelSuite;
@@ -116,6 +121,7 @@ public:
     AEGP_Command m_command;
     const A_u_char *i_match_nameZ;
     ImGuiExampleView *m_pImguiView;
+    picojson::value designSystemJsonObject;
 
     static SPAPI A_Err CommandHook(AEGP_GlobalRefcon plugin_refconP, AEGP_CommandRefcon refconP, AEGP_Command command,
                                    AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
@@ -247,6 +253,10 @@ public:
         ImGui::StyleColorsLight();
         ImGui_ImplOSX_Init();
         ImGui_ImplOpenGL2_Init();
+
+//        std::fstream designSystemSketchFile("/Users/richardlalancette/youidev/uswish/samples/Nexus/tools/megaextractor/test-sketch-files/DesignSystem-v2.sketch");
+        std::fstream designSystemJsonFile("/Users/richardlalancette/youidev/uswish/samples/Nexus/tools/megaextractor/DesignSystem.json");
+        designSystemJsonFile >> designSystemJsonObject;
     }
 
     A_Err IdleHook(
@@ -262,8 +272,8 @@ public:
             ImGui_ImplOSX_NewFrame(m_pImguiView);
             ImGui::NewFrame();
 
+            // Fill the panel
             ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
-//            ShowDemoWindow();
 
             ImGui::Render();
             [[m_pImguiView openGLContext] makeCurrentContext];
@@ -330,26 +340,42 @@ public:
             return;
         }
 
+        picojson::object &rootObject = designSystemJsonObject.get<picojson::object>();
+
         if (ImGui::CollapsingHeader("Design System  " ICON_FA_PENCIL_RULER))
         {
             ImGui::Indent(ImGui::GetStyle().FramePadding.x);
 
             if (ImGui::CollapsingHeader("Instructions  " ICON_FA_BOOK))
             {
-                ImGui::Text("Instructions");
+                picojson::value &designsysteminstructions = rootObject["designsysteminstructions"];
             }
             ImGui::Separator();
 
             if (ImGui::CollapsingHeader("Colors  " ICON_FA_PALETTE))
             {
+                picojson::value &palette = rootObject["palette"];
             }
             ImGui::Separator();
 
             if (ImGui::CollapsingHeader("Typography  " ICON_FA_FONT))
             {
-                ImGui::Text("Typography");
+                picojson::value &typography = rootObject["typography"];
             }
             ImGui::Separator();
+
+            if (ImGui::CollapsingHeader("Motion  " ICON_FA_FILM))
+            {
+                picojson::value &motionDesignMacro = rootObject["motiondesign"];
+            }
+            ImGui::Separator();
+
+            if (ImGui::CollapsingHeader("Components  " ICON_FA_CLONE))
+            {
+                picojson::value &components = rootObject["components"];
+            }
+            ImGui::Separator();
+
             ImGui::Unindent(ImGui::GetStyle().FramePadding.x);
         }
 

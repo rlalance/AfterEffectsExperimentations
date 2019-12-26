@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/PanelatorUI_Plat.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/PanelatorUI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator_Strings.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator_Strings.cpp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectId" id="1VGCEjsHdrdBYwkfLnTk5YlcJWB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Panelator">
+    <configuration name="Build_em_all" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Buildall" TARGET_NAME="Build_em_all" CONFIG_NAME="Debug" SCHEME_NAME="Build_em_all" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CCU" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CCU" TARGET_NAME="CCU" CONFIG_NAME="Debug" SCHEME_NAME="CCU" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Panelator" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panelator" TARGET_NAME="Panelator" CONFIG_NAME="Debug" SCHEME_NAME="Panelator" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_PATH="/Applications/Adobe After Effects 2020/Adobe After Effects 2020.app" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WIthAE" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panelator" TARGET_NAME="Panelator" CONFIG_NAME="Debug" SCHEME_NAME="WIthAE" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_PATH="/Applications/Adobe After Effects 2020/Adobe After Effects 2020.app" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Build_em_all" />
+      <item itemvalue="Application.Panelator" />
+      <item itemvalue="Application.WIthAE" />
+      <item itemvalue="Application.CCU" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="" />
+      <created>1576869934617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576869934617</updated>
+      <workItem from="1576869939851" duration="2124000" />
+      <workItem from="1576873099924" duration="4925000" />
+      <workItem from="1577109243468" duration="2831000" />
+      <workItem from="1577113685754" duration="3967000" />
+      <workItem from="1577117850638" duration="688000" />
+      <workItem from="1577118595153" duration="1246000" />
+      <workItem from="1577119919746" duration="17751000" />
+      <workItem from="1577366775353" duration="402000" />
+      <workItem from="1577367266886" duration="622000" />
+      <workItem from="1577368360997" duration="204000" />
+      <workItem from="1577368783681" duration="147000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

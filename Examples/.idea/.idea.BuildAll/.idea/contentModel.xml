@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="/" t="ExcludeRecursive" />
+    <e p="/AEGP" t="ExcludeRecursive" />
+    <e p="/GP" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="AEGP/Artie" t="Include">
+        <e p="Artie.cpp" t="Include" />
+        <e p="Artie.h" t="Include" />
+        <e p="Artie_PiPL.r" t="Include" />
+        <e p="Artie_types.h" t="Include" />
+        <e p="Artie_vector.h" t="Include" />
+        <e p="Common" t="Include">
+          <e p="GP_Vers.h" t="Include" />
+        </e>
+        <e p="Win" t="IncludeRecursive">
+          <e p="Artie.vcxproj" t="IncludeRecursive" />
+          <e p="Artie_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Easy_Cheese" t="Include">
+        <e p="Easy_Cheese.cpp" t="Include" />
+        <e p="Easy_Cheese.h" t="Include" />
+        <e p="Easy_Cheese_PiPL.r" t="Include" />
+        <e p="Easy_Cheese_Strings.cpp" t="Include" />
+        <e p="Easy_Cheese_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Easy_Cheese.vcxproj" t="IncludeRecursive" />
+          <e p="Easy_Cheese_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/FBIO" t="Include">
+        <e p="FBIO.cpp" t="Include" />
+        <e p="FBIO.h" t="Include" />
+        <e p="FBIO_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="FBIO.vcxproj" t="IncludeRecursive" />
+          <e p="FBIO_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Grabba" t="Include">
+        <e p="Grabba.cpp" t="Include" />
+        <e p="Grabba.h" t="Include" />
+        <e p="Grabba_PiPL.r" t="Include" />
+        <e p="Grabba_Strings.cpp" t="Include" />
+        <e p="Grabba_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Grabba.vcxproj" t="IncludeRecursive" />
+          <e p="Grabba_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/IO" t="Include">
+        <e p="IO.cpp" t="Include" />
+        <e p="IO.h" t="Include" />
+        <e p="IO_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="IO.vcxproj" t="IncludeRecursive" />
+          <e p="IO_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Mangler" t="Include">
+        <e p="Mangler.cpp" t="Include" />
+        <e p="Mangler.h" t="Include" />
+        <e p="Mangler_PiPL.r" t="Include" />
+        <e p="Mangler_Strings.cpp" t="Include" />
+        <e p="Mangler_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Mangler.vcxproj" t="IncludeRecursive" />
+          <e p="Mangler_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Panelator" t="Include">
+        <e p="Panelator.cpp" t="Include" />
+        <e p="Panelator.h" t="Include" />
+        <e p="Panelator_PiPL.r" t="Include" />
+        <e p="Panelator_Strings.cpp" t="Include" />
+        <e p="PanelatorUI.cpp" t="Include" />
+        <e p="PanelatorUI.h" t="Include" />
+        <e p="PT_Err.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Panelator.vcxproj" t="IncludeRecursive" />
+          <e p="Panelator_PiPL.rc" t="Include" />
+          <e p="PanelatorUI_Plat.cpp" t="Include" />
+          <e p="PanelatorUI_Plat.h" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Persisto" t="Include">
+        <e p="Persisto.cpp" t="Include" />
+        <e p="Persisto.h" t="Include" />
+        <e p="Persisto_PiPL.r" t="Include" />
+        <e p="Persisto_Strings.cpp" t="Include" />
+        <e p="Persisto_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Persisto.vcxproj" t="IncludeRecursive" />
+          <e p="Persisto_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/ProjDumper" t="Include">
+        <e p="ProjDumper.cpp" t="Include" />
+        <e p="ProjDumper.h" t="Include" />
+        <e p="ProjDumper_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="ProjDumper.vcxproj" t="IncludeRecursive" />
+          <e p="ProjDumper_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Projector" t="Include">
+        <e p="Projector.cpp" t="Include" />
+        <e p="Projector.h" t="Include" />
+        <e p="Projector_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Projector.vcxproj" t="IncludeRecursive" />
+          <e p="Projector_PiPL.rc" t="Include" />
+          <e p="resource.h" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Streamie" t="Include">
+        <e p="Streamie.cpp" t="Include" />
+        <e p="Streamie.h" t="Include" />
+        <e p="Streamie_PiPL.r" t="Include" />
+        <e p="Streamie_Strings.cpp" t="Include" />
+        <e p="Streamie_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="resource.h" t="Include" />
+          <e p="Streamie.vcxproj" t="IncludeRecursive" />
+          <e p="Streamie_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Sweetie" t="Include">
+        <e p="Sweetie.cpp" t="Include" />
+        <e p="Sweetie.h" t="Include" />
+        <e p="Sweetie_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Sweetie.vcxproj" t="IncludeRecursive" />
+          <e p="Sweetie_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGP/Text_Twiddler" t="Include">
+        <e p="Text_Twiddler.cpp" t="Include" />
+        <e p="Text_Twiddler.h" t="Include" />
+        <e p="Text_Twiddler_PiPL.r" t="Include" />
+        <e p="Text_Twiddler_Strings.cpp" t="Include" />
+        <e p="Text_Twiddler_Strings.h" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="resource.h" t="Include" />
+          <e p="Text_Twiddler.vcxproj" t="IncludeRecursive" />
+          <e p="Text_Twiddler_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="AEGPs" t="Include" />
+      <e p="BuildAll.sln" t="IncludeFlat" />
+      <e p="Effect/Checkout" t="Include">
+        <e p="Checkout.cpp" t="Include" />
+        <e p="Checkout.h" t="Include" />
+        <e p="CheckoutPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Checkout.vcxproj" t="IncludeRecursive" />
+          <e p="CheckoutPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Convolutrix" t="Include">
+        <e p="Convolutrix.cpp" t="Include" />
+        <e p="Convolutrix.h" t="Include" />
+        <e p="Convolutrix_Strings.cpp" t="Include" />
+        <e p="Convolutrix_Strings.h" t="Include" />
+        <e p="ConvolutrixPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Convolutrix.vcxproj" t="IncludeRecursive" />
+          <e p="ConvolutrixPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Gamma_Table" t="Include">
+        <e p="Gamma_Table.cpp" t="Include" />
+        <e p="Gamma_Table.h" t="Include" />
+        <e p="Gamma_TablePiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Gamma_Table.vcxproj" t="IncludeRecursive" />
+          <e p="Gamma_TablePiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/GLator" t="Include">
+        <e p="GL_base.cpp" t="Include" />
+        <e p="GL_base.h" t="Include" />
+        <e p="GLator.cpp" t="Include" />
+        <e p="GLator.h" t="Include" />
+        <e p="GLator_Strings.cpp" t="Include" />
+        <e p="GLator_Strings.h" t="Include" />
+        <e p="GLatorPiPL.r" t="Include" />
+        <e p="glbinding" t="Include">
+          <e p="source" t="Include">
+            <e p="glbinding" t="Include">
+              <e p="source" t="Include">
+                <e p="AbstractFunction.cpp" t="Include" />
+                <e p="AbstractValue.cpp" t="Include" />
+                <e p="Binding.cpp" t="Include" />
+                <e p="Binding_objects.cpp" t="Include" />
+                <e p="callbacks.cpp" t="Include" />
+                <e p="callbacks_private.h" t="Include" />
+                <e p="ContextHandle.cpp" t="Include" />
+                <e p="ContextInfo.cpp" t="Include" />
+                <e p="gl" t="Include">
+                  <e p="functions.cpp" t="Include" />
+                  <e p="types.cpp" t="Include" />
+                </e>
+                <e p="glrevision.h" t="Include" />
+                <e p="logging.cpp" t="Include" />
+                <e p="logging_private.h" t="Include" />
+                <e p="Meta.cpp" t="Include" />
+                <e p="Meta_BitfieldsByString.cpp" t="Include" />
+                <e p="Meta_BooleansByString.cpp" t="Include" />
+                <e p="Meta_EnumsByString.cpp" t="Include" />
+                <e p="Meta_ExtensionsByFunctionString.cpp" t="Include" />
+                <e p="Meta_ExtensionsByString.cpp" t="Include" />
+                <e p="Meta_FunctionStringsByExtension.cpp" t="Include" />
+                <e p="Meta_Maps.h" t="Include" />
+                <e p="Meta_ReqVersionsByExtension.cpp" t="Include" />
+                <e p="Meta_StringsByBitfield.cpp" t="Include" />
+                <e p="Meta_StringsByBoolean.cpp" t="Include" />
+                <e p="Meta_StringsByEnum.cpp" t="Include" />
+                <e p="Meta_StringsByExtension.cpp" t="Include" />
+                <e p="ProcAddress.cpp" t="Include" />
+                <e p="RingBuffer.h" t="Include" />
+                <e p="RingBuffer.hpp" t="Include" />
+                <e p="Value.cpp" t="Include" />
+                <e p="Version.cpp" t="Include" />
+                <e p="Version_ValidVersions.cpp" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="GLSL_files" t="Include">
+          <e p="fragment_shader.frag" t="Include" />
+          <e p="fragment_shader2.frag" t="Include" />
+          <e p="vertex_shader.vert" t="Include" />
+        </e>
+        <e p="vmath.hpp" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="GLator.vcxproj" t="IncludeRecursive" />
+          <e p="GLatorPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Paramarama" t="Include">
+        <e p="Paramarama.cpp" t="Include" />
+        <e p="Paramarama.h" t="Include" />
+        <e p="Paramarama_Strings.cpp" t="Include" />
+        <e p="Paramarama_Strings.h" t="Include" />
+        <e p="ParamaramaPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Paramarama.vcxproj" t="IncludeRecursive" />
+          <e p="ParamaramaPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/PathMaster" t="Include">
+        <e p="PathMaster.cpp" t="Include" />
+        <e p="PathMaster.h" t="Include" />
+        <e p="PathMaster_Strings.cpp" t="Include" />
+        <e p="PathMasterPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="PathMaster.vcxproj" t="IncludeRecursive" />
+          <e p="PathMasterPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Portable" t="Include">
+        <e p="Portable.cpp" t="Include" />
+        <e p="Portable.h" t="Include" />
+        <e p="Portable_Strings.cpp" t="Include" />
+        <e p="Portable_Strings.h" t="Include" />
+        <e p="PortablePiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Portable.vcxproj" t="IncludeRecursive" />
+          <e p="PortablePiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Resizer" t="Include">
+        <e p="Resizer.cpp" t="Include" />
+        <e p="Resizer.h" t="Include" />
+        <e p="Resizer_Strings.cpp" t="Include" />
+        <e p="Resizer_Strings.h" t="Include" />
+        <e p="ResizerPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Resizer.vcxproj" t="IncludeRecursive" />
+          <e p="ResizerPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/SDK_Backwards" t="Include">
+        <e p="AEFX_SND_Stuff.cpp" t="Include" />
+        <e p="SDK_Backwards.cpp" t="Include" />
+        <e p="SDK_Backwards.h" t="Include" />
+        <e p="SDK_BackwardsPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="SDK_Backwards.vcxproj" t="IncludeRecursive" />
+          <e p="SDK_BackwardsPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/SDK_Noise" t="Include">
+        <e p="SDK_Noise.cpp" t="Include" />
+        <e p="SDK_Noise.h" t="Include" />
+        <e p="SDK_NoisePiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="SDK_Noise.vcxproj" t="IncludeRecursive" />
+          <e p="SDK_NoisePiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Shifter" t="Include">
+        <e p="Shifter.cpp" t="Include" />
+        <e p="Shifter.h" t="Include" />
+        <e p="ShifterPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Shifter.vcxproj" t="IncludeRecursive" />
+          <e p="ShifterPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/SmartyPants" t="Include">
+        <e p="SmartyPants.cpp" t="Include" />
+        <e p="SmartyPants.h" t="Include" />
+        <e p="SmartyPants_Strings.cpp" t="Include" />
+        <e p="SmartyPants_Strings.h" t="Include" />
+        <e p="SmartyPantsPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="SmartyPants.vcxproj" t="IncludeRecursive" />
+          <e p="SmartyPantsPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effect/Transformer" t="Include">
+        <e p="Transformer.cpp" t="Include" />
+        <e p="Transformer.h" t="Include" />
+        <e p="Transformer_Strings.cpp" t="Include" />
+        <e p="Transformer_Strings.h" t="Include" />
+        <e p="TransformerPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Transformer.vcxproj" t="IncludeRecursive" />
+          <e p="TransformerPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Effects" t="Include">
+        <e p="Template" t="Include" />
+        <e p="UI" t="Include" />
+      </e>
+      <e p="GP/EMP" t="Include">
+        <e p="Common" t="Include">
+          <e p="GP_Vers.h" t="Include" />
+        </e>
+        <e p="EMP.cpp" t="Include" />
+        <e p="EMP.h" t="Include" />
+        <e p="EMP_PiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="EMP.vcxproj" t="IncludeRecursive" />
+          <e p="EMP_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="GPs" t="Include" />
+      <e p="Headers" t="Include">
+        <e p="A.h" t="Include" />
+        <e p="adobesdk" t="Include">
+          <e p="drawbotsuite" t="Include">
+            <e p="DrawbotSuiteTypes.h" t="Include" />
+          </e>
+          <e p="DrawbotSuite.h" t="Include" />
+        </e>
+        <e p="AE_AdvEffectSuites.h" t="Include" />
+        <e p="AE_ChannelSuites.h" t="Include" />
+        <e p="AE_Effect.h" t="Include" />
+        <e p="AE_EffectCB.h" t="Include" />
+        <e p="AE_EffectCBSuites.h" t="Include" />
+        <e p="AE_EffectSuites.h" t="Include" />
+        <e p="AE_EffectSuitesHelper.h" t="Include" />
+        <e p="AE_EffectUI.h" t="Include" />
+        <e p="AE_FPF.h" t="Include" />
+        <e p="AE_GeneralPlug.h" t="Include" />
+        <e p="AE_GeneralPlugOld.h" t="Include" />
+        <e p="AE_GeneralPlugPanels.h" t="Include" />
+        <e p="AE_Hook.h" t="Include" />
+        <e p="AE_IO.h" t="Include" />
+        <e p="AE_Macros.h" t="Include" />
+        <e p="AE_PluginData.h" t="Include" />
+        <e p="AEConfig.h" t="Include" />
+        <e p="AEFX_SuiteHandlerTemplate.h" t="Include" />
+        <e p="FIEL_Public.h" t="Include" />
+        <e p="PF_Masks.h" t="Include" />
+        <e p="PR_Public.h" t="Include" />
+        <e p="PrSDKAESupport.h" t="Include" />
+        <e p="PrSDKAEUI.h" t="Include" />
+        <e p="PrSDKPixelFormat.h" t="Include" />
+        <e p="PT_Public.h" t="Include" />
+        <e p="SPBasic.h" t="Include" />
+        <e p="SPConfig.h" t="Include" />
+        <e p="SPErrorCodes.h" t="Include" />
+        <e p="SPTypes.h" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Template/Skeleton" t="Include">
+        <e p="Skeleton.cpp" t="Include" />
+        <e p="Skeleton.h" t="Include" />
+        <e p="Skeleton_Strings.cpp" t="Include" />
+        <e p="Skeleton_Strings.h" t="Include" />
+        <e p="SkeletonPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Skeleton.vcxproj" t="IncludeRecursive" />
+          <e p="SkeletonPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="UI/CCU" t="Include">
+        <e p="CCU.cpp" t="Include" />
+        <e p="CCU.h" t="Include" />
+        <e p="CCU_PiPL.r" t="Include" />
+        <e p="CCU_Strings.cpp" t="Include" />
+        <e p="CCU_Strings.h" t="Include" />
+        <e p="CCU_UI.cpp" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="CCU.vcxproj" t="IncludeRecursive" />
+          <e p="CCU_PiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="UI/ColorGrid" t="Include">
+        <e p="ColorGrid.cpp" t="Include" />
+        <e p="ColorGrid.h" t="Include" />
+        <e p="ColorGrid_Arb_Handler.cpp" t="Include" />
+        <e p="ColorGrid_UI_Handler.cpp" t="Include" />
+        <e p="ColorGridPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="ColorGrid.vcxproj" t="IncludeRecursive" />
+          <e p="ColorGridPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="UI/Custom_ECW_UI" t="Include">
+        <e p="Custom_ECW_UI.cpp" t="Include" />
+        <e p="Custom_ECW_UI.h" t="Include" />
+        <e p="Custom_ECW_UI_Strings.cpp" t="Include" />
+        <e p="Custom_ECW_UI_Strings.h" t="Include" />
+        <e p="Custom_ECW_UIPiPL.r" t="Include" />
+        <e p="Custom_ECW_UIUI.cpp" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Custom_ECW_UI.vcxproj" t="IncludeRecursive" />
+          <e p="Custom_ECW_UIPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="UI/HistoGrid" t="Include">
+        <e p="HistoGrid.cpp" t="Include" />
+        <e p="HistoGrid.h" t="Include" />
+        <e p="HistoGrid_UI_Handler.cpp" t="Include" />
+        <e p="HistoGridPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="HistoGrid.vcxproj" t="IncludeRecursive" />
+          <e p="HistoGridPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="UI/Supervisor" t="Include">
+        <e p="Supervisor.cpp" t="Include" />
+        <e p="Supervisor.h" t="Include" />
+        <e p="Supervisor_Strings.cpp" t="Include" />
+        <e p="Supervisor_Strings.h" t="Include" />
+        <e p="SupervisorPiPL.r" t="Include" />
+        <e p="Win" t="IncludeRecursive">
+          <e p="Supervisor.vcxproj" t="IncludeRecursive" />
+          <e p="SupervisorPiPL.rc" t="Include" />
+        </e>
+      </e>
+      <e p="Util" t="Include">
+        <e p="AE_EffectSuitesHelper.h" t="Include" />
+        <e p="AEFX_ArbParseHelper.h" t="Include" />
+        <e p="AEFX_ChannelDepthTpl.h" t="Include" />
+        <e p="AEFX_SuiteHelper.c" t="Include" />
+        <e p="AEFX_SuiteHelper.h" t="Include" />
+        <e p="AEGP_SuiteHandler.cpp" t="Include" />
+        <e p="AEGP_SuiteHandler.h" t="Include" />
+        <e p="AEGP_Utils.cpp" t="Include" />
+        <e p="AEGP_Utils.h" t="Include" />
+        <e p="DuckSuite.h" t="Include" />
+        <e p="entry.h" t="Include" />
+        <e p="MissingSuiteError.cpp" t="Include" />
+        <e p="Param_Utils.h" t="Include" />
+        <e p="ParamUtils.h" t="Include" />
+        <e p="PF_Suite_Helper.h" t="Include" />
+        <e p="Smart_Utils.cpp" t="Include" />
+        <e p="Smart_Utils.h" t="Include" />
+        <e p="String_Utils.h" t="Include" />
+      </e>
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_BuildAll.-2037870282.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Program Files/Microsoft Visual Studio/VC98/Include" t="Include">
+      <e p="BASETSD.H" t="Include" />
+    </e>
+  </component>
+</project>

@@ -42,4 +42,5 @@ dependencies: \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/imgui_impl_osx.h \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/imgui_impl_opengl2.h \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/IconsFontAwesome5.h \
-  /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/picojson.h
+  /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/picojson.h \
+  /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/nlohmann/json.hpp

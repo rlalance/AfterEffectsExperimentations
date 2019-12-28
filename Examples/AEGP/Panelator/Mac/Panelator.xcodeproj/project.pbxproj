@@ -77,6 +77,7 @@
 		C500C45C846EB6CC4CFAD352 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		C500C4F400703CE348CCB445 /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_textedit.h; sourceTree = "<group>"; };
 		C500C8D3D849CBC32BECC402 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
+		C500C901A8A36628B088A52B /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		C500CAF7D02D18CEF957DF6A /* imstb_rectpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_rectpack.h; sourceTree = "<group>"; };
 		C500CB1477076B03717DC6A3 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
 		C500CBC755697397DF5964AD /* imgui_impl_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_osx.h; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 				C500CFF6C2FC344A62BACAF3 /* fa-regular-400.ttf */,
 				C500CBFB9A8016ED9EBB047F /* fa-solid-900.ttf */,
 				C500C45C846EB6CC4CFAD352 /* picojson.h */,
+				C500CF39A75D7562A5F5D0A7 /* nlohmann */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +179,14 @@
 				C500C2383027C1FE19E38A64 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C500CF39A75D7562A5F5D0A7 /* nlohmann */ = {
+			isa = PBXGroup;
+			children = (
+				C500C901A8A36628B088A52B /* json.hpp */,
+			);
+			path = nlohmann;
 			sourceTree = "<group>";
 		};
 		D0E32EB80B1D01F4000702C5 /* Headers */ = {
@@ -309,6 +319,7 @@
 		C4E61880095A3C800012CA3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;

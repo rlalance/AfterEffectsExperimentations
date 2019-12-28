@@ -6,6 +6,11 @@
 #include "IconsFontAwesome5.h"
 #include "picojson.h"
 
+// https://github.com/nlohmann/json
+#import "json.hpp"
+
+using json = nlohmann::json;
+
 #import <Cocoa/Cocoa.h>
 #include <new>
 #import <OpenGL/gl.h>
@@ -16,6 +21,10 @@
 
 
 // https://fontawesome.com/icons?d=gallery&m=free
+
+// Cloud based design
+// https://assets.adobe.com/public/d608e206-7e47-43f4-5c1b-dacdcff45581
+
 
 
 template<>
@@ -121,7 +130,7 @@ public:
     AEGP_Command m_command;
     const A_u_char *i_match_nameZ;
     ImGuiExampleView *m_pImguiView;
-    picojson::value designSystemJsonObject;
+    json designSystemJsonObject;
 
     static SPAPI A_Err CommandHook(AEGP_GlobalRefcon plugin_refconP, AEGP_CommandRefcon refconP, AEGP_Command command,
                                    AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
@@ -254,8 +263,7 @@ public:
         ImGui_ImplOSX_Init();
         ImGui_ImplOpenGL2_Init();
 
-//        std::fstream designSystemSketchFile("/Users/richardlalancette/youidev/uswish/samples/Nexus/tools/megaextractor/test-sketch-files/DesignSystem-v2.sketch");
-        std::fstream designSystemJsonFile("/Users/richardlalancette/youidev/uswish/samples/Nexus/tools/megaextractor/DesignSystem.json");
+        std::fstream designSystemJsonFile("/Users/richardlalancette/Desktop/DesignSystem.json");
         designSystemJsonFile >> designSystemJsonObject;
     }
 
@@ -270,9 +278,9 @@ public:
         {
             ImGui_ImplOpenGL2_NewFrame();
             ImGui_ImplOSX_NewFrame(m_pImguiView);
+
             ImGui::NewFrame();
 
-            // Fill the panel
             ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
 
             ImGui::Render();
@@ -295,94 +303,134 @@ public:
         return err;
     }
 
+    void UIDesignSystemInstructions()
+    {
+        if (ImGui::BeginTabItem(ICON_FA_PENCIL_RULER " Design"))
+        {
+            auto designsysteminstructions = designSystemJsonObject.find("designsysteminstructions");
+
+            ImGui::EndTabItem();
+        }
+    }
+
+    void UIColorPalette()
+    {
+        if (ImGui::BeginTabItem(ICON_FA_TINT " Colors"))
+        {
+            auto palette = designSystemJsonObject.find("palette");
+            ImGuiColorEditFlags colorDisplayFlags = 0;
+            colorDisplayFlags |= ImGuiColorEditFlags_AlphaPreviewHalf;
+            colorDisplayFlags |= ImGuiColorEditFlags_DisplayRGB;
+            colorDisplayFlags |= ImGuiColorEditFlags_DisplayHex;
+            colorDisplayFlags |= ImGuiColorEditFlags_DisplayHSV;
+
+            for (auto &flavor : palette->items())
+            {
+                std::string flavorName = flavor.key();
+
+                if (flavorName != "instructions")
+                {
+                    ImGui::Text(flavorName.c_str(), "");
+
+                    for (auto &colorSwatch : flavor.value())
+                    {
+//                    ImVec4 *color = &colorSwatch["colorRGBA"];
+                        static ImVec4 color;
+                        ImGui::ColorButton("colorSwatch", color, colorDisplayFlags, ImVec2(ImGui::GetFrameHeight() * 2, ImGui::GetFrameHeight() * 2));
+                    }
+                }
+                else
+                {
+                    ImGui::Separator();
+                    ImGui::Text(flavorName.c_str(), "");
+                }
+            }
+            ImGui::EndTabItem();
+        }
+    }
+
+    void UITypography()
+    {
+        if (ImGui::BeginTabItem(ICON_FA_FONT " Type"))
+        {
+            auto palette = designSystemJsonObject.find("typography");
+
+            ImGui::EndTabItem();
+        }
+    }
+
+    void UIMotionDesign()
+    {
+        if (ImGui::BeginTabItem(ICON_FA_FIGHTER_JET " Motion"))
+        {
+            auto motionSpec = designSystemJsonObject.find("motiondesign");
+
+            ImGui::BeginTabBar("Design System!");
+            {
+                if (ImGui::BeginTabItem(" Macro"))
+                {
+                    auto macro = motionSpec->find("macro");
+                    for (auto &element : *macro)
+                    {
+                        ImGui::Separator();
+                        ImGui::BeginGroup();
+                        {
+                            ImGui::Indent(ImGui::GetStyle().IndentSpacing);
+                            ImGui::TextUnformatted(element["name"].get<std::string>().c_str());
+                            ImGui::TextUnformatted(element["description"].get<std::string>().c_str());
+                            ImGui::TextUnformatted(element["element"].get<std::string>().c_str());
+                            ImGui::TextUnformatted(element["transformation"].get<std::string>().c_str());
+                            ImGui::TextUnformatted(element["duration"].get<std::string>().c_str());
+                            ImGui::TextUnformatted(element["delay"].get<std::string>().c_str());
+
+                            //                            auto curve = macro->find("curve");
+                            ImGui::Unindent(ImGui::GetStyle().IndentSpacing);
+                        }
+                        ImGui::EndGroup();
+                    }
+                    ImGui::EndTabItem();
+                }
+
+                if (ImGui::BeginTabItem(" Micro"))
+                {
+                    auto micro = motionSpec->find("micro");
+                    for (auto &element : *micro)
+                    {
+                    }
+                    ImGui::EndTabItem();
+                }
+                ImGui::EndTabBar();
+            }
+
+            ImGui::EndTabItem();
+        }
+    }
+
     void ShowNewWindow(ImVec2 parentWindowSize)
     {
-        static bool no_titlebar = true;
-        static bool no_scrollbar = false;
-        static bool no_menu = true;
-        static bool no_move = true;
-        static bool no_resize = true;
-        static bool no_collapse = false;
-        static bool no_close = true;
-        static bool no_nav = false;
-        static bool no_background = false;
-        static bool no_bring_to_front = true;
-        static bool open = true;
-
         ImGuiWindowFlags window_flags = 0;
-        if (no_titlebar)
-            window_flags |= ImGuiWindowFlags_NoTitleBar;
-        if (no_scrollbar)
-            window_flags |= ImGuiWindowFlags_NoScrollbar;
-        if (!no_menu)
-            window_flags |= ImGuiWindowFlags_MenuBar;
-        if (no_move)
-            window_flags |= ImGuiWindowFlags_NoMove;
-        if (no_resize)
-            window_flags |= ImGuiWindowFlags_NoResize;
-        if (no_collapse)
-            window_flags |= ImGuiWindowFlags_NoCollapse;
-        if (no_nav)
-            window_flags |= ImGuiWindowFlags_NoNav;
-        if (no_background)
-            window_flags |= ImGuiWindowFlags_NoBackground;
-        if (no_bring_to_front)
-            window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus;
+        static bool open = true;
+        window_flags |= ImGuiWindowFlags_NoTitleBar;
+        window_flags |= ImGuiWindowFlags_NoScrollbar;
+        window_flags |= ImGuiWindowFlags_NoMove;
+        window_flags |= ImGuiWindowFlags_NoResize;
+        window_flags |= ImGuiWindowFlags_NoCollapse;
+        window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus;
 
         ImGui::SetNextWindowPos(ImVec2(0, 0), ImGuiCond_Always);
         ImGui::SetNextWindowSize(parentWindowSize, ImGuiCond_Always);
 
-        // Main body of the Demo window starts here.
-        if (!ImGui::Begin("You.i Nexus", &open, window_flags))
+        ImGui::Begin("Design System", &open, window_flags);
         {
-            // Early out if the window is collapsed, as an optimization.
-            ImGui::End();
-            return;
+            ImGui::BeginTabBar("Design System!");
+            {
+                UIDesignSystemInstructions();
+                UIColorPalette();
+                UITypography();
+                UIMotionDesign();
+            }
+            ImGui::EndTabBar();
         }
-
-        picojson::object &rootObject = designSystemJsonObject.get<picojson::object>();
-
-        if (ImGui::CollapsingHeader("Design System  " ICON_FA_PENCIL_RULER))
-        {
-            ImGui::Indent(ImGui::GetStyle().FramePadding.x);
-
-            if (ImGui::CollapsingHeader("Instructions  " ICON_FA_BOOK))
-            {
-                picojson::value &designsysteminstructions = rootObject["designsysteminstructions"];
-            }
-            ImGui::Separator();
-
-            if (ImGui::CollapsingHeader("Colors  " ICON_FA_PALETTE))
-            {
-                picojson::value &palette = rootObject["palette"];
-            }
-            ImGui::Separator();
-
-            if (ImGui::CollapsingHeader("Typography  " ICON_FA_FONT))
-            {
-                picojson::value &typography = rootObject["typography"];
-            }
-            ImGui::Separator();
-
-            if (ImGui::CollapsingHeader("Motion  " ICON_FA_FILM))
-            {
-                picojson::value &motionDesignMacro = rootObject["motiondesign"];
-            }
-            ImGui::Separator();
-
-            if (ImGui::CollapsingHeader("Components  " ICON_FA_CLONE))
-            {
-                picojson::value &components = rootObject["components"];
-            }
-            ImGui::Separator();
-
-            ImGui::Unindent(ImGui::GetStyle().FramePadding.x);
-        }
-
-        if (ImGui::CollapsingHeader("Tools"))
-        {
-        }
-
         ImGui::End();
     }
 
@@ -395,6 +443,8 @@ public:
         }
     }
 };
+
+
 
 A_Err EntryPointFunc(struct SPBasicSuite *pica_basicP, A_long major_versionL, A_long minor_versionL,
                      AEGP_PluginID aegp_plugin_id, AEGP_GlobalRefcon *global_refconP)

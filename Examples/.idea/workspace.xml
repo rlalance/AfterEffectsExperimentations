@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/designsystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/AEGP_SuiteHandler.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/AEGP_SuiteHandler.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/MissingSuiteError.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/MissingSuiteError.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI_Plat.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI_Plat.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI_Plat.o" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/PanelatorUI_Plat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator_Strings.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator_Strings.dia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/imgui_demo.o" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/imgui_demo.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Panelator-project-headers.hmap" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Panelator-project-headers.hmap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/130167a8df74e3e1c33146de7f0c68b9-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/130167a8df74e3e1c33146de7f0c68b9-manifest.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/d17eaa2df7cda03a5969570fa0bcf99f-desc.xcbuild" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/d17eaa2df7cda03a5969570fa0bcf99f-manifest.xcbuild" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,7 +136,7 @@
       <workItem from="1577367266886" duration="622000" />
       <workItem from="1577368360997" duration="204000" />
       <workItem from="1577368783681" duration="4507000" />
-      <workItem from="1577373465885" duration="16168000" />
+      <workItem from="1577373465885" duration="20821000" />
     </task>
     <servers />
   </component>
@@ -146,6 +163,11 @@
           <url>file://$PROJECT_DIR$/AEGP/Panelator/Mac/imgui_draw.cpp</url>
           <line>1656</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp</url>
+          <line>273</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

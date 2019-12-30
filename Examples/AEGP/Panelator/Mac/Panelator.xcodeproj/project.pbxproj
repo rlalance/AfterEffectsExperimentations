@@ -74,6 +74,7 @@
 		C500C39E977A548151ACB278 /* IconsFontAwesome5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconsFontAwesome5.h; sourceTree = "<group>"; };
 		C500C3DDE8AFD3FE7964C7ED /* imgui_impl_opengl2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_opengl2.h; sourceTree = "<group>"; };
 		C500C3DE96DBC892E782B0BA /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
+		C500C4535F32A474C3ACA854 /* designsystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = designsystem.h; sourceTree = "<group>"; };
 		C500C45C846EB6CC4CFAD352 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		C500C4F400703CE348CCB445 /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_textedit.h; sourceTree = "<group>"; };
 		C500C8D3D849CBC32BECC402 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 				C500CBFB9A8016ED9EBB047F /* fa-solid-900.ttf */,
 				C500C45C846EB6CC4CFAD352 /* picojson.h */,
 				C500CF39A75D7562A5F5D0A7 /* nlohmann */,
+				C500C4535F32A474C3ACA854 /* designsystem.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -319,7 +321,7 @@
 		C4E61880095A3C800012CA3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;

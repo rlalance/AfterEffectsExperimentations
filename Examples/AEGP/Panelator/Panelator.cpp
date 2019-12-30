@@ -9,6 +9,8 @@
 // https://github.com/nlohmann/json
 #import "json.hpp"
 
+#include "designsystem.h"
+
 using json = nlohmann::json;
 
 #import <Cocoa/Cocoa.h>
@@ -131,6 +133,7 @@ public:
     const A_u_char *i_match_nameZ;
     ImGuiExampleView *m_pImguiView;
     json designSystemJsonObject;
+    Youi::DesignSystem designSystem;
 
     static SPAPI A_Err CommandHook(AEGP_GlobalRefcon plugin_refconP, AEGP_CommandRefcon refconP, AEGP_Command command,
                                    AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
@@ -264,8 +267,11 @@ public:
         ImGui_ImplOSX_Init();
         ImGui_ImplOpenGL2_Init();
 
-        std::fstream designSystemJsonFile("/Users/richardlalancette/Desktop/DesignSystem.json");
-        designSystemJsonFile >> designSystemJsonObject;
+        std::fstream designSystemJsonFile("/Users/richardlalancette/Desktop/DesignSystemV3.json");
+        std::string designJson;
+        designSystemJsonFile >> designJson;
+
+        designSystem = nlohmann::json::parse(designJson);
     }
 
     void StyleColorsYouiLight()
@@ -284,9 +290,9 @@ public:
         style.TouchExtraPadding.y = 0;
         style.IndentSpacing = 20;
         style.ScrollbarSize = 10;
-        style.GrabMinSize = 0;
+        style.GrabMinSize = 5;
 
-        style.WindowBorderSize = 1;
+        style.WindowBorderSize = 0;
         style.ChildBorderSize = 1;
         style.PopupBorderSize = 1;
         style.FrameBorderSize = 1;

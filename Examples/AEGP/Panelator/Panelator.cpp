@@ -5,6 +5,7 @@
 #include "imgui_impl_opengl2.h"
 #include "IconsFontAwesome5.h"
 #include "picojson.h"
+#import "imgui_internal.h"
 
 // https://github.com/nlohmann/json
 #import "json.hpp"
@@ -20,6 +21,8 @@ using json = nlohmann::json;
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#import <list>
+#import <codecvt>
 
 
 // https://fontawesome.com/icons?d=gallery&m=free
@@ -134,6 +137,10 @@ public:
     ImGuiExampleView *m_pImguiView;
     json designSystemJsonObject;
     Youi::DesignSystem designSystem;
+    std::list<ImFont*> m_fonts;
+    ImFont *pSymbolFont;
+    ImFont *pBodyFont;
+    ImFont *pH1Font;
 
     static SPAPI A_Err CommandHook(AEGP_GlobalRefcon plugin_refconP, AEGP_CommandRefcon refconP, AEGP_Command command,
                                    AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
@@ -216,11 +223,15 @@ public:
         AEGP_PanelFunctions1 *outFunctionTable,
         AEGP_PanelRefcon *outRefcon)
     {
-        NSFontManager *sharedFontManager = [NSFontManager sharedFontManager];
-        NSArray<NSString *> *availableFontFamilies = [sharedFontManager availableFontFamilies];
-        NSArray<NSString *> *availableFonts = [sharedFontManager availableFonts];
-        
         *outRefcon = reinterpret_cast<AEGP_PanelRefcon>(new PanelatorUI_Plat(m_pBasicSuite, panelH, platformView, outFunctionTable));
+
+        AEGP_MemHandle resultMemH = NULL;
+        m_suiteHandler.UtilitySuite6()->AEGP_GetPluginPaths(m_pluginId, AEGP_GetPathTypes_APP, &resultMemH);
+        void **path;
+        m_suiteHandler.MemorySuite1()->AEGP_LockMemHandle(resultMemH, reinterpret_cast<void **>(&path));
+        const std::u16string AEApplicationPath(reinterpret_cast<const char16_t *>(path)); // will read until the null character
+        m_suiteHandler.MemorySuite1()->AEGP_UnlockMemHandle(resultMemH);
+
 
         NSView *pRootView = platformView;
         pRootView.autoresizesSubviews = true;
@@ -256,15 +267,25 @@ public:
         ImGuiIO &io = ImGui::GetIO();
         io.Fonts->AddFontDefault();
 
-// merge in icons from Font Awesome
-        static const ImWchar icons_ranges[] = {ICON_MIN_FA, ICON_MAX_FA, 0};
+        std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> convert;
+        std::u16string fontPath = AEApplicationPath + u"/Plug-ins/Panelator.plugin/Contents/Resources/fonts/";
+
+        ImFontConfig mainFontConfig;
+        mainFontConfig.FontDataOwnedByAtlas = true;
+        mainFontConfig.MergeMode = false;
+
+        std::string bodyFontPath = convert.to_bytes(fontPath + u"RobotoMono-Regular.ttf");
+        pBodyFont = io.Fonts->AddFontFromFileTTF(bodyFontPath.c_str(), 18.0f, &mainFontConfig);
+
         ImFontConfig icons_config;
         icons_config.MergeMode = true;
         icons_config.PixelSnapH = true;
+        std::string symbolFontName = convert.to_bytes(fontPath + u"fa-solid-900.ttf");
+        static const ImWchar icons_ranges[] = {ICON_MIN_FA, ICON_MAX_FA, 0};
+        pSymbolFont = io.Fonts->AddFontFromFileTTF(reinterpret_cast<const char *>(symbolFontName.c_str()), 16.0f, &icons_config, icons_ranges);
 
-        std::string fontPath = std::string(getcwd(NULL, 0)) + "/Plug-ins/fa-solid-900.ttf";
-
-        io.Fonts->AddFontFromFileTTF(fontPath.c_str(), 16.0f, &icons_config, icons_ranges);
+        std::string h1FontPath = convert.to_bytes(fontPath + u"RobotoMono-Regular.ttf");
+        pH1Font = io.Fonts->AddFontFromFileTTF(h1FontPath.c_str(), 18.0f, &mainFontConfig);
 
 //        ImGui::StyleColorsLight();
         StyleColorsYouiLight();
@@ -272,10 +293,8 @@ public:
         ImGui_ImplOpenGL2_Init();
 
         std::fstream designSystemJsonFile("/Users/richardlalancette/Desktop/DesignSystemV3.json");
-        std::string designJson;
-        designSystemJsonFile >> designJson;
 
-        designSystem = nlohmann::json::parse(designJson);
+        designSystem = nlohmann::json::parse(designSystemJsonFile);
     }
 
     void StyleColorsYouiLight()
@@ -374,10 +393,12 @@ public:
             ImGui_ImplOSX_NewFrame(m_pImguiView);
 
             ImGui::NewFrame();
+            ImGui::PushFont(pBodyFont);
 
-            ImGui::ShowDemoWindow();
+//            ImGui::ShowDemoWindow();
+            ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
 
-//            ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
+            ImGui::PopFont();
 
             ImGui::Render();
             [[m_pImguiView openGLContext] makeCurrentContext];
@@ -403,9 +424,170 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_PENCIL_RULER " Design"))
         {
-            auto designsysteminstructions = designSystemJsonObject.find("designsysteminstructions");
+            auto ds = designSystem.instructions;
+            ImGui::TextWrapped("Format: %s", ds->design_system_format->c_str());
+            ImGui::Separator();
+
+            for (const auto &m : *ds->metadata)
+            {
+                ImGui::TextWrapped("%s", m.c_str());
+            }
 
             ImGui::EndTabItem();
+        }
+    }
+
+    static void FlavorIdentifierDisplay(const std::string &flavorName)
+    {
+        // Orientation
+        if (flavorName.find("landscape") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_IMAGE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" Landscape");
+        }
+
+        if (flavorName.find("portrait") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_PORTRAIT);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" portrait");
+        }
+
+        // form factor
+        if (flavorName.find("tv") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_TV);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" tv");
+        }
+
+        if (flavorName.find("handset") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_MOBILE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" handset");
+        }
+
+        if (flavorName.find("tablet") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_TABLET);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" tablet");
+        }
+
+        // Density
+        if (flavorName.find("ldpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" ldpi (~120dpi) (0.75x)");
+        }
+
+        if (flavorName.find("mdpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" mdpi (~160dpi) (1.0x baseline)");
+        }
+
+        if (flavorName.find("hdpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" hdpi (~240dpi) (1.5x)");
+        }
+
+        if (flavorName.find("xhdpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" xhdpi (~320dpi) (2.0x)");
+        }
+
+        if (flavorName.find("xxhdpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" xxhdpi (~480dpi) (3.0x)");
+        }
+
+        if (flavorName.find("xxxhdpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" xxxhdpi (~640dpi) (4.0x)");
+        }
+
+        if (flavorName.find("nodpi") != std::string::npos)
+        {
+            ImGui::Text(ICON_FA_EYE);
+            ImGui::SameLine();
+            ImGui::TextDisabled(" nodpi (density-independent/no scaling)");
+        }
+
+        /*
+            ldpi	Resources for low-density (ldpi) screens (~120dpi).
+            mdpi	Resources for medium-density (mdpi) screens (~160dpi). (This is the baseline density.)
+            hdpi	Resources for high-density (hdpi) screens (~240dpi).
+            xhdpi	Resources for extra-high-density (xhdpi) screens (~320dpi).
+            xxhdpi	Resources for extra-extra-high-density (xxhdpi) screens (~480dpi).
+            xxxhdpi	Resources for extra-extra-extra-high-density (xxxhdpi) uses (~640dpi).
+         */
+    }
+
+    void DetailedColorTooltip(const char *desc, const char *icon = "?", const char *flavorName = "")
+    {
+        ImGui::PushFont(pBodyFont);
+
+        if (strlen(icon))
+        {
+            ImGui::TextDisabled(icon);
+        }
+        else
+        {
+            ImGui::TextDisabled(" ? ");
+        }
+
+        if (ImGui::IsItemHovered())
+        {
+            ImGui::BeginTooltip();
+            ImGui::PushFont(pBodyFont);
+            FlavorIdentifierDisplay(std::string(flavorName));
+            ImGui::PopFont();
+            ImGui::Separator();
+            ImGui::PushTextWrapPos(ImGui::GetFontSize() * 150.0f);
+            ImGui::TextWrapped(desc);
+            ImGui::PopTextWrapPos();
+            ImGui::EndTooltip();
+        }
+        ImGui::PopFont();
+    }
+
+    void DetailsColorButton(const char *text, float col[4], ImGuiColorEditFlags flags)
+    {
+        ImGuiContext &g = *ImGui::GetCurrentContext();
+
+        ImGui::Text(text);
+
+        ImVec2 sz(g.FontSize * 3 + g.Style.FramePadding.y * 2, g.FontSize * 3 + g.Style.FramePadding.y * 2);
+        ImVec4 cf(col[0], col[1], col[2], (flags & ImGuiColorEditFlags_NoAlpha) ? 1.0f : col[3]);
+        int cr = IM_F32_TO_INT8_SAT(col[0]), cg = IM_F32_TO_INT8_SAT(col[1]), cb = IM_F32_TO_INT8_SAT(col[2]), ca = (flags & ImGuiColorEditFlags_NoAlpha) ? 255 : IM_F32_TO_INT8_SAT(col[3]);
+        ImGui::ColorButton("##preview", cf, (flags & (ImGuiColorEditFlags__InputMask | ImGuiColorEditFlags_NoAlpha | ImGuiColorEditFlags_AlphaPreview | ImGuiColorEditFlags_AlphaPreviewHalf)) | ImGuiColorEditFlags_NoTooltip, sz);
+        ImGui::SameLine();
+        if ((flags & ImGuiColorEditFlags_InputRGB) || !(flags & ImGuiColorEditFlags__InputMask))
+        {
+            if (flags & ImGuiColorEditFlags_NoAlpha)
+                ImGui::Text("#%02X%02X%02X\nR: %d, G: %d, B: %d\n(%.3f, %.3f, %.3f)", cr, cg, cb, cr, cg, cb, col[0], col[1], col[2]);
+            else
+                ImGui::Text("#%02X%02X%02X%02X\nR:%d, G:%d, B:%d, A:%d\n(%.3f, %.3f, %.3f, %.3f)", cr, cg, cb, ca, cr, cg, cb, ca, col[0], col[1], col[2], col[3]);
+        }
+        else if (flags & ImGuiColorEditFlags_InputHSV)
+        {
+            if (flags & ImGuiColorEditFlags_NoAlpha)
+                ImGui::Text("H: %.3f, S: %.3f, V: %.3f", col[0], col[1], col[2]);
+            else
+                ImGui::Text("H: %.3f, S: %.3f, V: %.3f, A: %.3f", col[0], col[1], col[2], col[3]);
         }
     }
 
@@ -413,33 +595,53 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_TINT " Colors"))
         {
-            auto palette = designSystemJsonObject.find("palette");
-            ImGuiColorEditFlags colorDisplayFlags = 0;
-            colorDisplayFlags |= ImGuiColorEditFlags_AlphaPreviewHalf;
-            colorDisplayFlags |= ImGuiColorEditFlags_DisplayRGB;
-            colorDisplayFlags |= ImGuiColorEditFlags_DisplayHex;
-            colorDisplayFlags |= ImGuiColorEditFlags_DisplayHSV;
+            auto colors = designSystem.colors;
 
-            for (auto &flavor : palette->items())
+            if (colors != nullptr)
             {
-                std::string flavorName = flavor.key();
+                auto flavors = colors->flavors;
 
-                if (flavorName != "instructions")
+                ImGuiColorEditFlags colorDisplayFlags = 0;
+                colorDisplayFlags |= ImGuiColorEditFlags_AlphaPreviewHalf;
+                colorDisplayFlags |= ImGuiColorEditFlags_DisplayRGB;
+                colorDisplayFlags |= ImGuiColorEditFlags_DisplayHex;
+                colorDisplayFlags |= ImGuiColorEditFlags_DisplayHSV;
+
+                static bool alpha_preview = true;
+                static bool alpha_half_preview = false;
+                static bool drag_and_drop = true;
+                static bool options_menu = true;
+                static bool hdr = false;
+
+                for (auto &flavor : *flavors)
                 {
-                    ImGui::Text(flavorName.c_str(), "");
+                    ImGui::PushFont(pH1Font);
+                    ImGui::Text(flavor.name->c_str());
+                    ImGui::SameLine();
 
-                    for (auto &colorSwatch : flavor.value())
+                    DetailedColorTooltip("Additional information and \nmetadata can be found here.", ICON_FA_INFO_CIRCLE, flavor.name->c_str());
+                    ImGui::Dummy(ImGui::GetStyle().ItemSpacing);
+                    ImGui::PopFont();
+
+                    for (auto &colorSwatch : *flavor.flavor_colors)
                     {
-//                    ImVec4 *color = &colorSwatch["colorRGBA"];
-                        static ImVec4 color;
-                        ImGui::ColorButton("colorSwatch", color, colorDisplayFlags, ImVec2(ImGui::GetFrameHeight() * 2, ImGui::GetFrameHeight() * 2));
+                        auto colorRGBA = *colorSwatch.color_rgba;
+                        auto colorName = colorSwatch.name->c_str();
+                        float color[] = {static_cast<float>(*colorRGBA.r), static_cast<float>(*colorRGBA.g), static_cast<float>(*colorRGBA.b), static_cast<float>(*colorRGBA.a)};
+
+                        DetailsColorButton(colorName, color, colorDisplayFlags);
                     }
-                }
-                else
-                {
+
+                    ImGui::Dummy(ImGui::GetStyle().ItemSpacing);
                     ImGui::Separator();
-                    ImGui::Text(flavorName.c_str(), "");
+                    ImGui::Dummy(ImGui::GetStyle().ItemSpacing);
                 }
+            }
+            else
+            {
+                ImGui::PushFont(pH1Font);
+                ImGui::TextWrapped("No colors found in the design system.", "");
+                ImGui::PopFont();
             }
             ImGui::EndTabItem();
         }
@@ -449,8 +651,6 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_FONT " Type"))
         {
-            auto palette = designSystemJsonObject.find("typography");
-
             ImGui::EndTabItem();
         }
     }
@@ -459,40 +659,38 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_FIGHTER_JET " Motion"))
         {
-            auto motionSpec = designSystemJsonObject.find("motiondesign");
-
             ImGui::BeginTabBar("Design System!");
             {
                 if (ImGui::BeginTabItem(" Macro"))
                 {
-                    auto macro = motionSpec->find("macro");
-                    for (auto &element : *macro)
-                    {
-                        ImGui::Separator();
-                        ImGui::BeginGroup();
-                        {
-                            ImGui::Indent(ImGui::GetStyle().IndentSpacing);
-                            ImGui::TextUnformatted(element["name"].get<std::string>().c_str());
-                            ImGui::TextUnformatted(element["description"].get<std::string>().c_str());
-                            ImGui::TextUnformatted(element["element"].get<std::string>().c_str());
-                            ImGui::TextUnformatted(element["transformation"].get<std::string>().c_str());
-                            ImGui::TextUnformatted(element["duration"].get<std::string>().c_str());
-                            ImGui::TextUnformatted(element["delay"].get<std::string>().c_str());
-
-                            //                            auto curve = macro->find("curve");
-                            ImGui::Unindent(ImGui::GetStyle().IndentSpacing);
-                        }
-                        ImGui::EndGroup();
-                    }
+//                auto macro = motionSpec->find("macro");
+//                for (auto &element : *macro)
+//                {
+//                    ImGui::Separator();
+//                    ImGui::BeginGroup();
+//                    {
+//                        ImGui::Indent(ImGui::GetStyle().IndentSpacing);
+//                        ImGui::TextUnformatted(element["name"].get<std::string>().c_str());
+//                        ImGui::TextUnformatted(element["description"].get<std::string>().c_str());
+//                        ImGui::TextUnformatted(element["element"].get<std::string>().c_str());
+//                        ImGui::TextUnformatted(element["transformation"].get<std::string>().c_str());
+//                        ImGui::TextUnformatted(element["duration"].get<std::string>().c_str());
+//                        ImGui::TextUnformatted(element["delay"].get<std::string>().c_str());
+//
+//                        //                            auto curve = macro->find("curve");
+//                        ImGui::Unindent(ImGui::GetStyle().IndentSpacing);
+//                    }
+//                    ImGui::EndGroup();
+//                }
                     ImGui::EndTabItem();
                 }
 
                 if (ImGui::BeginTabItem(" Micro"))
                 {
-                    auto micro = motionSpec->find("micro");
-                    for (auto &element : *micro)
-                    {
-                    }
+//                auto micro = motionSpec->find("micro");
+//                for (auto &element : *micro)
+//                {
+//                }
                     ImGui::EndTabItem();
                 }
                 ImGui::EndTabBar();
@@ -500,6 +698,50 @@ public:
 
             ImGui::EndTabItem();
         }
+
+//        if (ImGui::BeginTabItem(ICON_FA_FIGHTER_JET " Motion"))
+//        {
+//            auto motionSpec = designSystemJsonObject.find("motiondesign");
+//
+//            ImGui::BeginTabBar("Design System!");
+//            {
+//                if (ImGui::BeginTabItem(" Macro"))
+//                {
+//                    auto macro = motionSpec->find("macro");
+//                    for (auto &element : *macro)
+//                    {
+//                        ImGui::Separator();
+//                        ImGui::BeginGroup();
+//                        {
+//                            ImGui::Indent(ImGui::GetStyle().IndentSpacing);
+//                            ImGui::TextUnformatted(element["name"].get<std::string>().c_str());
+//                            ImGui::TextUnformatted(element["description"].get<std::string>().c_str());
+//                            ImGui::TextUnformatted(element["element"].get<std::string>().c_str());
+//                            ImGui::TextUnformatted(element["transformation"].get<std::string>().c_str());
+//                            ImGui::TextUnformatted(element["duration"].get<std::string>().c_str());
+//                            ImGui::TextUnformatted(element["delay"].get<std::string>().c_str());
+//
+//                            //                            auto curve = macro->find("curve");
+//                            ImGui::Unindent(ImGui::GetStyle().IndentSpacing);
+//                        }
+//                        ImGui::EndGroup();
+//                    }
+//                    ImGui::EndTabItem();
+//                }
+//
+//                if (ImGui::BeginTabItem(" Micro"))
+//                {
+//                    auto micro = motionSpec->find("micro");
+//                    for (auto &element : *micro)
+//                    {
+//                    }
+//                    ImGui::EndTabItem();
+//                }
+//                ImGui::EndTabBar();
+//            }
+//
+//            ImGui::EndTabItem();
+//        }
     }
 
     void ShowNewWindow(ImVec2 parentWindowSize)

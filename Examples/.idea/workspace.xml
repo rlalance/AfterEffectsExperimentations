@@ -3,58 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Commando/Mac/Commando.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Commando/Mac/Commando.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Easy_Cheese/Mac/Easy_Cheese.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Easy_Cheese/Mac/Easy_Cheese.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/FBIO/Mac/FBIO.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/FBIO/Mac/FBIO.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Grabba/Mac/Grabba.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Grabba/Mac/Grabba.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/IO/Mac/IO.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/IO/Mac/IO.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Mangler/Mac/Mangler.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Mangler/Mac/Mangler.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/Panelator.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/Resources/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/Resources/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/Resources/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/27603aa5c2667daf7658654d94d27c67-desc.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/27603aa5c2667daf7658654d94d27c67-manifest.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/6e4dd4244646ef8028ac5f488bec6960-desc.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/6e4dd4244646ef8028ac5f488bec6960-manifest.xcbuild" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/designsystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/designsystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Persisto/Mac/Persisto.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Persisto/Mac/Persisto.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/ProjDumper/Mac/ProjDumper.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/ProjDumper/Mac/ProjDumper.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Streamie/Mac/Streamie.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Streamie/Mac/Streamie.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Sweetie/Mac/Sweetie.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Sweetie/Mac/Sweetie.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Text_Twiddler/Mac/Text_Twiddler.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Text_Twiddler/Mac/Text_Twiddler.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Buildall.xcodeproj/project.xcworkspace/xcuserdata/richardlalancette.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/Buildall.xcodeproj/project.xcworkspace/xcuserdata/richardlalancette.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Checkout/Mac/Checkout.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Checkout/Mac/Checkout.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Convolutrix/Mac/Convolutrix.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Convolutrix/Mac/Convolutrix.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/GLator/Mac/GLator.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/GLator/Mac/GLator.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/GLator/Mac/glbinding/glbinding.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/GLator/Mac/glbinding/glbinding.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Gamma_Table/Mac/Gamma_Table.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Gamma_Table/Mac/Gamma_Table.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Paramarama/Mac/Paramarama.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Paramarama/Mac/Paramarama.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/PathMaster/Mac/PathMaster.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/PathMaster/Mac/PathMaster.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Portable/Mac/Portable.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Portable/Mac/Portable.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Resizer/Mac/Resizer.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Resizer/Mac/Resizer.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/SDK_Backwards/Mac/SDK_Backwards.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/SDK_Backwards/Mac/SDK_Backwards.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/SDK_Noise/Mac/SDK_Noise.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/SDK_Noise/Mac/SDK_Noise.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Shifter/Mac/Shifter.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Shifter/Mac/Shifter.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/SmartyPants/Mac/SmartyPants.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/SmartyPants/Mac/SmartyPants.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effect/Transformer/Mac/Transformer.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Effect/Transformer/Mac/Transformer.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Template/Skeleton/Mac/Skeleton.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Template/Skeleton/Mac/Skeleton.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/ColorGrid/Mac/ColorGrid.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/UI/ColorGrid/Mac/ColorGrid.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Custom_ECW_UI/Mac/Custom_ECW_UI.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Custom_ECW_UI/Mac/Custom_ECW_UI.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/HistoGrid/Mac/HistoGrid.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/UI/HistoGrid/Mac/HistoGrid.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Supervisor/Mac/Supervisor.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Supervisor/Mac/Supervisor.xcodeproj/xcuserdata/richardlalancette.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/XCBuildData/19a51f7ff2bebc287efa760830f3ea71-desc.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/XCBuildData/19a51f7ff2bebc287efa760830f3ea71-manifest.xcbuild" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/build/XCBuildData/build.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +124,7 @@
       <workItem from="1577368360997" duration="204000" />
       <workItem from="1577368783681" duration="4507000" />
       <workItem from="1577373465885" duration="22315000" />
-      <workItem from="1578154113506" duration="5354000" />
+      <workItem from="1578154113506" duration="16218000" />
     </task>
     <servers />
   </component>
@@ -196,17 +152,7 @@
           <line>1656</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp</url>
-          <line>218</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="AppleRunConfiguration">
-        <watch expression="((__NSCFString *)((id)[availableFonts objectAtIndex:0]))-&gt;NSMutableString" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -43,5 +43,7 @@ dependencies: \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/imgui_impl_opengl2.h \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/IconsFontAwesome5.h \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/picojson.h \
+  /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/imgui_internal.h \
+  imstb_textedit.h \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/nlohmann/json.hpp \
   /Users/richardlalancette/youidev/experimental/AfterEffectsExperimentations/Examples/AEGP/Panelator/Mac/designsystem.h

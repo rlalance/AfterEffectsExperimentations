@@ -216,6 +216,10 @@ public:
         AEGP_PanelFunctions1 *outFunctionTable,
         AEGP_PanelRefcon *outRefcon)
     {
+        NSFontManager *sharedFontManager = [NSFontManager sharedFontManager];
+        NSArray<NSString *> *availableFontFamilies = [sharedFontManager availableFontFamilies];
+        NSArray<NSString *> *availableFonts = [sharedFontManager availableFonts];
+        
         *outRefcon = reinterpret_cast<AEGP_PanelRefcon>(new PanelatorUI_Plat(m_pBasicSuite, panelH, platformView, outFunctionTable));
 
         NSView *pRootView = platformView;

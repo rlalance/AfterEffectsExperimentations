@@ -4,12 +4,9 @@
     <list default="true" id="c1e1c9e6-2efd-4b43-b2cb-1d8871a5f264" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Debug/Panelator.plugin/Contents/MacOS/Panelator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.dia" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/Panelator.build/Debug/Panelator.build/Objects-normal/x86_64/Panelator.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/BuildDescriptionCacheIndex-9e63bda7dfdc209b5c6a3a6f64b7dce2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/build/XCBuildData/build.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Mac/designsystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Mac/designsystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AEGP/Panelator/Panelator.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,6 +122,8 @@
       <workItem from="1577368783681" duration="4507000" />
       <workItem from="1577373465885" duration="22315000" />
       <workItem from="1578154113506" duration="16218000" />
+      <workItem from="1578244057633" duration="5119000" />
+      <workItem from="1578254663517" duration="177000" />
     </task>
     <servers />
   </component>

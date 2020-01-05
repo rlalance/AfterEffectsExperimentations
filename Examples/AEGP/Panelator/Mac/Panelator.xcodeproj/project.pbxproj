@@ -17,6 +17,7 @@
 		C500C8598F4FEA90C434307D /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C500CEED79A542BC494314BF /* imgui_draw.cpp */; };
 		C500C8C0A0FAD0F00690D066 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C500CB1477076B03717DC6A3 /* imgui_demo.cpp */; };
 		C500CA6A9A18AEB861448578 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = C500C3815C2CABC8B0F8938F /* fonts */; };
+		C500CAE7DD03AE39A70B03B8 /* images in Resources */ = {isa = PBXBuildFile; fileRef = C500CA66C2A9BA8DA3AF2A88 /* images */; };
 		C500CC519B7B4613AA7012F6 /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C500CF9961F33F97812FF903 /* imgui_widgets.cpp */; };
 		C500CE305A6396E4D376610C /* imgui_impl_opengl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C500CD4BA6E776886F7C6627 /* imgui_impl_opengl2.cpp */; };
 		C500CE872AC194FD7E2E6C22 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C500CE55BDC04A36FEAEC3EE /* MetalKit.framework */; };
@@ -71,7 +72,9 @@
 		C500C45C846EB6CC4CFAD352 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		C500C4F400703CE348CCB445 /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_textedit.h; sourceTree = "<group>"; };
 		C500C901A8A36628B088A52B /* json.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
+		C500CA66C2A9BA8DA3AF2A88 /* images */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		C500CAF7D02D18CEF957DF6A /* imstb_rectpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_rectpack.h; sourceTree = "<group>"; };
+		C500CB05C08AAC5F0F7FABA9 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		C500CB1477076B03717DC6A3 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
 		C500CBC755697397DF5964AD /* imgui_impl_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_osx.h; sourceTree = "<group>"; };
 		C500CBCF52AABEB9BF285376 /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui.cpp; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 				7E94365110471DC20053766A /* AE_GeneralPlugPanels.h */,
 				D0E32DCA0B1CEE0C000702C5 /* PT_Err.h */,
 				D0694E4A0B1D054400B55835 /* SuiteHelper.h */,
+				C500CB05C08AAC5F0F7FABA9 /* stb_image.h */,
 			);
 			name = Headers;
 			sourceTree = SOURCE_ROOT;
@@ -195,6 +199,7 @@
 			children = (
 				D0FDF9B909941656008E4F6B /* Panelator_PiPL.r */,
 				C500C3815C2CABC8B0F8938F /* fonts */,
+				C500CA66C2A9BA8DA3AF2A88 /* images */,
 			);
 			name = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C500CA6A9A18AEB861448578 /* fonts in Resources */,
+				C500CAE7DD03AE39A70B03B8 /* images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

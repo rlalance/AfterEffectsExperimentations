@@ -32,37 +32,39 @@ void PanelatorUI::GetSnapSizes(A_LPoint *snapSizes, A_long *numSizesP)
 
 void PanelatorUI::PopulateFlyout(AEGP_FlyoutMenuItem *itemsP, A_long *in_out_numItemsP)
 {
-    AEGP_FlyoutMenuItem myMenu[] = {
-        {1, AEGP_FlyoutMenuMarkType_NORMAL, FALSE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Hi!")},
-        {1, AEGP_FlyoutMenuMarkType_SEPARATOR, TRUE, AEGP_FlyoutMenuCmdID_NONE, NULL},
-        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Set BG Color")},
-        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_RED, reinterpret_cast<const A_u_char *>("Red")},
-        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_GREEN, reinterpret_cast<const A_u_char *>("Green")},
-        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_BLUE, reinterpret_cast<const A_u_char *>("Blue")},
-        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_STANDARD, reinterpret_cast<const A_u_char *>("Normal Fill Color")},
-        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Set Title")},
-        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_TITLE_LONGER, reinterpret_cast<const A_u_char *>("Longer")},
-        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_TITLE_SHORTER, reinterpret_cast<const A_u_char *>("Shorter")},
-    };
-    A_long menuTableSizeL = sizeof(myMenu) / sizeof(AEGP_FlyoutMenuItem);
-
-#ifdef AE_OS_WIN // std::copy might be unsafe! Oh no! The sky is falling!
-#pragma warning(push)
-#pragma warning(disable:4996)
-#endif
-    if (menuTableSizeL <= *in_out_numItemsP)
-    {
-        std::copy(&myMenu[0], &myMenu[menuTableSizeL], itemsP);
-    }
-    else
-    {
-        std::copy(&myMenu[0], myMenu + *in_out_numItemsP, itemsP);
-    }
-#ifdef AE_OS_WIN
-#pragma warning(pop)
-#endif
-
-    *in_out_numItemsP = menuTableSizeL;
+    return;
+//
+//    AEGP_FlyoutMenuItem myMenu[] = {
+//        {1, AEGP_FlyoutMenuMarkType_NORMAL, FALSE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Hi!")},
+//        {1, AEGP_FlyoutMenuMarkType_SEPARATOR, TRUE, AEGP_FlyoutMenuCmdID_NONE, NULL},
+//        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Set BG Color")},
+//        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_RED, reinterpret_cast<const A_u_char *>("Red")},
+//        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_GREEN, reinterpret_cast<const A_u_char *>("Green")},
+//        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_BLUE, reinterpret_cast<const A_u_char *>("Blue")},
+//        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_STANDARD, reinterpret_cast<const A_u_char *>("Normal Fill Color")},
+//        {1, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, AEGP_FlyoutMenuCmdID_NONE, reinterpret_cast<const A_u_char *>("Set Title")},
+//        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_TITLE_LONGER, reinterpret_cast<const A_u_char *>("Longer")},
+//        {2, AEGP_FlyoutMenuMarkType_NORMAL, TRUE, PT_MenuCmd_TITLE_SHORTER, reinterpret_cast<const A_u_char *>("Shorter")},
+//    };
+//    A_long menuTableSizeL = sizeof(myMenu) / sizeof(AEGP_FlyoutMenuItem);
+//
+//#ifdef AE_OS_WIN // std::copy might be unsafe! Oh no! The sky is falling!
+//#pragma warning(push)
+//#pragma warning(disable:4996)
+//#endif
+//    if (menuTableSizeL <= *in_out_numItemsP)
+//    {
+//        std::copy(&myMenu[0], &myMenu[menuTableSizeL], itemsP);
+//    }
+//    else
+//    {
+//        std::copy(&myMenu[0], myMenu + *in_out_numItemsP, itemsP);
+//    }
+//#ifdef AE_OS_WIN
+//#pragma warning(pop)
+//#endif
+//
+//    *in_out_numItemsP = menuTableSizeL;
 }
 
 void PanelatorUI::DoFlyoutCommand(AEGP_FlyoutMenuCmdID commandID)

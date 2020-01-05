@@ -7,6 +7,9 @@
 #include "picojson.h"
 #import "imgui_internal.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 // https://github.com/nlohmann/json
 #import "json.hpp"
 
@@ -30,7 +33,36 @@ using json = nlohmann::json;
 // Cloud based design
 // https://assets.adobe.com/public/d608e206-7e47-43f4-5c1b-dacdcff45581
 
+// Simple helper function to load an image into a OpenGL texture with common settings
+bool LoadTextureFromFile(const char *filename, GLuint *out_texture, int *out_width, int *out_height)
+{
+    // Load from file
+    int image_width = 0;
+    int image_height = 0;
+    unsigned char *image_data = stbi_load(filename, &image_width, &image_height, NULL, 4);
+    if (image_data == NULL)
+        return false;
 
+    // Create a OpenGL texture identifier
+    GLuint image_texture;
+    glGenTextures(1, &image_texture);
+    glBindTexture(GL_TEXTURE_2D, image_texture);
+
+    // Setup filtering parameters for display
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // Upload pixels into texture
+    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+    stbi_image_free(image_data);
+
+    *out_texture = image_texture;
+    *out_width = image_width;
+    *out_height = image_height;
+
+    return true;
+}
 
 template<>
 const A_char *SuiteTraits<AEGP_PanelSuite1>::i_name = kAEGPPanelSuite;
@@ -135,12 +167,16 @@ public:
     AEGP_Command m_command;
     const A_u_char *i_match_nameZ;
     ImGuiExampleView *m_pImguiView;
-    json designSystemJsonObject;
+    bool bDesignSystemLoaded = false;
     Youi::DesignSystem designSystem;
-    std::list<ImFont*> m_fonts;
     ImFont *pSymbolFont;
     ImFont *pBodyFont;
     ImFont *pH1Font;
+    ImFont *pH2Font;
+    GLuint vidMetalTexture;
+    GLuint modMetalTexture;
+    ImTextureID vidTextureID;
+    ImTextureID modTextureID;
 
     static SPAPI A_Err CommandHook(AEGP_GlobalRefcon plugin_refconP, AEGP_CommandRefcon refconP, AEGP_Command command,
                                    AEGP_HookPriority hook_priority, A_Boolean already_handledB, A_Boolean *handledPB)
@@ -269,6 +305,7 @@ public:
 
         std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t> convert;
         std::u16string fontPath = AEApplicationPath + u"/Plug-ins/Panelator.plugin/Contents/Resources/fonts/";
+        std::u16string imagePath = AEApplicationPath + u"/Plug-ins/Panelator.plugin/Contents/Resources/images/";
 
         ImFontConfig mainFontConfig;
         mainFontConfig.FontDataOwnedByAtlas = true;
@@ -285,10 +322,26 @@ public:
         pSymbolFont = io.Fonts->AddFontFromFileTTF(reinterpret_cast<const char *>(symbolFontName.c_str()), 16.0f, &icons_config, icons_ranges);
 
         std::string h1FontPath = convert.to_bytes(fontPath + u"RobotoMono-Regular.ttf");
-        pH1Font = io.Fonts->AddFontFromFileTTF(h1FontPath.c_str(), 18.0f, &mainFontConfig);
+        pH1Font = io.Fonts->AddFontFromFileTTF(h1FontPath.c_str(), 48.0f, &mainFontConfig);
 
+        std::string h2FontPath = convert.to_bytes(fontPath + u"RobotoMono-Regular.ttf");
+        pH2Font = io.Fonts->AddFontFromFileTTF(h1FontPath.c_str(), 18.0f, &mainFontConfig);
+
+        int out_width;
+        int out_height;
+
+        std::string vidImagePath = convert.to_bytes(imagePath + u"vidsmall.png");
+        LoadTextureFromFile(vidImagePath.c_str(), &vidMetalTexture, &out_width, &out_height);
+        vidTextureID = (ImTextureID)vidMetalTexture;
+
+        std::string modImagePath = convert.to_bytes(imagePath + u"modsmall.png");
+        LoadTextureFromFile(modImagePath.c_str(), &modMetalTexture, &out_width, &out_height);
+        modTextureID = (ImTextureID) modMetalTexture;
+
+//        ImGui::StyleColorsDark();
 //        ImGui::StyleColorsLight();
         StyleColorsYouiLight();
+
         ImGui_ImplOSX_Init();
         ImGui_ImplOpenGL2_Init();
 
@@ -297,12 +350,52 @@ public:
         designSystem = nlohmann::json::parse(designSystemJsonFile);
     }
 
+    A_Err IdleHook(
+        AEGP_GlobalRefcon plugin_refconP,
+        AEGP_IdleRefcon refconP,
+        A_long *max_sleepPL)
+    {
+        A_Err err = A_Err_NONE;
+
+        if (m_pImguiView != nullptr)
+        {
+            ImGui_ImplOpenGL2_NewFrame();
+            ImGui_ImplOSX_NewFrame(m_pImguiView);
+
+            ImGui::NewFrame();
+            ImGui::PushFont(pBodyFont);
+
+//            ImGui::ShowDemoWindow();
+            ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
+
+            ImGui::PopFont();
+
+            ImGui::Render();
+            [[m_pImguiView openGLContext] makeCurrentContext];
+
+            ImDrawData *draw_data = ImGui::GetDrawData();
+            GLsizei width = (GLsizei) (draw_data->DisplaySize.x * draw_data->FramebufferScale.x);
+            GLsizei height = (GLsizei) (draw_data->DisplaySize.y * draw_data->FramebufferScale.y);
+            glViewport(0, 0, width, height);
+
+            static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+            glClearColor(clear_color.x, clear_color.y, clear_color.z, clear_color.w);
+            glClear(GL_COLOR_BUFFER_BIT);
+            ImGui_ImplOpenGL2_RenderDrawData(draw_data);
+
+            // Present
+            [[m_pImguiView openGLContext] flushBuffer];
+        }
+
+        return err;
+    }
+
     void StyleColorsYouiLight()
     {
         ImGuiStyle &style = ImGui::GetStyle();
 
-        style.WindowPadding.x = 5;
-        style.WindowPadding.y = 5;
+        style.WindowPadding.x = 10;
+        style.WindowPadding.y = 10;
         style.FramePadding.x = 5;
         style.FramePadding.y = 5;
         style.ItemSpacing.x = 5;
@@ -380,58 +473,21 @@ public:
         colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
     }
 
-    A_Err IdleHook(
-        AEGP_GlobalRefcon plugin_refconP,
-        AEGP_IdleRefcon refconP,
-        A_long *max_sleepPL)
-    {
-        A_Err err = A_Err_NONE;
-
-        if (m_pImguiView != nullptr)
-        {
-            ImGui_ImplOpenGL2_NewFrame();
-            ImGui_ImplOSX_NewFrame(m_pImguiView);
-
-            ImGui::NewFrame();
-            ImGui::PushFont(pBodyFont);
-
-//            ImGui::ShowDemoWindow();
-            ShowNewWindow(ImVec2(m_pImguiView.bounds.size.width, m_pImguiView.bounds.size.height));
-
-            ImGui::PopFont();
-
-            ImGui::Render();
-            [[m_pImguiView openGLContext] makeCurrentContext];
-
-            ImDrawData *draw_data = ImGui::GetDrawData();
-            GLsizei width = (GLsizei) (draw_data->DisplaySize.x * draw_data->FramebufferScale.x);
-            GLsizei height = (GLsizei) (draw_data->DisplaySize.y * draw_data->FramebufferScale.y);
-            glViewport(0, 0, width, height);
-
-            static ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-            glClearColor(clear_color.x, clear_color.y, clear_color.z, clear_color.w);
-            glClear(GL_COLOR_BUFFER_BIT);
-            ImGui_ImplOpenGL2_RenderDrawData(draw_data);
-
-            // Present
-            [[m_pImguiView openGLContext] flushBuffer];
-        }
-
-        return err;
-    }
-
     void UIDesignSystemInstructions()
     {
         if (ImGui::BeginTabItem(ICON_FA_PENCIL_RULER " Design"))
         {
+            PageHeader("Design System", vidTextureID);
+
             auto ds = designSystem.instructions;
-            ImGui::TextWrapped("Format: %s", ds->design_system_format->c_str());
-            ImGui::Separator();
 
             for (const auto &m : *ds->metadata)
             {
                 ImGui::TextWrapped("%s", m.c_str());
+                ImGui::Separator();
             }
+
+            ImGui::TextWrapped("Format: %s", ds->design_system_format->c_str());
 
             ImGui::EndTabItem();
         }
@@ -595,6 +651,8 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_TINT " Colors"))
         {
+            PageHeader("Colors", vidTextureID);
+
             auto colors = designSystem.colors;
 
             if (colors != nullptr)
@@ -615,11 +673,11 @@ public:
 
                 for (auto &flavor : *flavors)
                 {
-                    ImGui::PushFont(pH1Font);
-                    ImGui::Text(flavor.name->c_str());
-                    ImGui::SameLine();
-
                     DetailedColorTooltip("Additional information and \nmetadata can be found here.", ICON_FA_INFO_CIRCLE, flavor.name->c_str());
+                    ImGui::SameLine();
+                    ImGui::PushFont(pH1Font);
+                    ImGui::TextWrapped(flavor.name->c_str());
+
                     ImGui::Dummy(ImGui::GetStyle().ItemSpacing);
                     ImGui::PopFont();
 
@@ -647,10 +705,25 @@ public:
         }
     }
 
+    void PageHeader(const char *title, ImTextureID textureID)
+    {
+        ImVec2 currentPosition = ImGui::GetCursorPos();
+        ImGui::Image(textureID, ImVec2(675, 51), ImVec2(0, 0), ImVec2(1, 1), ImVec4(1.0f, 1.0f, 1.0f, 0.85f), ImVec4(1.0f, 1.0f, 1.0f, 1.0f));
+        ImGui::SetCursorPos(currentPosition);
+
+        ImGui::PushFont(pH1Font);
+        const ImVec4 &white = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+        ImGui::Indent(ImGui::GetStyle().IndentSpacing);
+        ImGui::TextColored(white, title);
+        ImGui::Unindent();
+        ImGui::PopFont();
+        ImGui::Dummy(ImVec2(ImGui::GetStyle().IndentSpacing, ImGui::GetStyle().IndentSpacing));    }
+
     void UITypography()
     {
         if (ImGui::BeginTabItem(ICON_FA_FONT " Type"))
         {
+            PageHeader("Typography", vidTextureID);
             ImGui::EndTabItem();
         }
     }
@@ -659,6 +732,8 @@ public:
     {
         if (ImGui::BeginTabItem(ICON_FA_FIGHTER_JET " Motion"))
         {
+            PageHeader("Motion", modTextureID);
+
             ImGui::BeginTabBar("Design System!");
             {
                 if (ImGui::BeginTabItem(" Macro"))
@@ -760,14 +835,26 @@ public:
 
         ImGui::Begin("Design System", &open, window_flags);
         {
-            ImGui::BeginTabBar("Design System!");
+//            if (!bDesignSystemLoaded)
+//            {
+//                PageHeader("Design System", vidTextureID);
+//
+//                if (ImGui::Button("Load Design System File"))
+//                {
+//                    bDesignSystemLoaded = true;
+//                }
+//            }
+//            else
             {
-                UIDesignSystemInstructions();
-                UIColorPalette();
-                UITypography();
-                UIMotionDesign();
+                ImGui::BeginTabBar("Design System!");
+                {
+                    UIDesignSystemInstructions();
+                    UIColorPalette();
+                    UITypography();
+                    UIMotionDesign();
+                }
+                ImGui::EndTabBar();
             }
-            ImGui::EndTabBar();
         }
         ImGui::End();
     }
